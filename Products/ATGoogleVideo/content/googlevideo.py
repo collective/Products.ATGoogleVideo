@@ -64,7 +64,7 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
     BooleanField('autoPlay',
         default=1,
         languageIndependent=True,
-        required=1,
+        required=0,
         widget=BooleanWidget(
             label='autoPlay',
             label_msgid='label_autoPlay',
@@ -107,7 +107,9 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
     implements(IATGoogleVideo)
 
     security = ClassSecurityInfo()
-
+    
+    product_type = 'Google Video'
+    
     schema = ATGoogleVideoSchema
     _at_rename_after_creation = True
 
