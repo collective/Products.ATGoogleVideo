@@ -1,0 +1,92 @@
+# Érico Andrei <erico@simplesconsultoria.com.br>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-06-11 20:30-0600\n"
+"Last-Translator: Érico Andrei <erico@simplesconsultoria.com.br>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ATGoogleVideo\n"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr ""
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr ""
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr ""
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr ""
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr ""
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr ""
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr ""
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr ""
+
+#. Default: "All videos&#x2026;"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr ""
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr ""
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr ""
+
+#. Default: "To view this content the following requirements must be fulfilled:"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "content_requirements"
+msgstr ""
+
+#. Default: "download it now free"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_download"
+msgstr ""
+
+#. Default: "Adobe Flash Player version 9,0,28,0 or later must be installed; ${download}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_required"
+msgstr ""
+
+#. Default: "Javascript 1.2 or later must be enabled"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "javascript_required"
+msgstr ""
+

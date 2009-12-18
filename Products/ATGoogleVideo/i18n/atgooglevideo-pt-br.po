@@ -1,0 +1,72 @@
+# Érico Andrei <erico@simplesconsultoria.com.br>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-06-11 20:30-0600\n"
+"Last-Translator: Érico Andrei <erico@simplesconsultoria.com.br>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: pt-BR\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ATGoogleVideo\n"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "Identificador do vídeo"
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Identificador do vídeo (docId)."
+
+#. Default: "All videos&#x2026;"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr "Todos os vídeos&#x2026;"
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr "Nenhum vídeo disponível."
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr "Vídeos recentes"
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr "Determina se vídeo deve ser iniciado automaticamente no carregamento da página."
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr "Imagem para ser exibida na listagem dos vídeos. Ela será redimencionada para melhor exibição."
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr "Define a qualidade de exibição. A utilização de 'best' é recomendada"
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr "Início automático"
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr "Imagem"
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr "Qualidade"
+

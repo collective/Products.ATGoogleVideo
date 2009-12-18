@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ATGoogleVideo">
+
+<!-- more information about attributes in: http://www.adobe.com/go/tn_4150 -->
+
+<metal:javascript fill-slot="javascript_head_slot">
+<script type="text/javascript" defer="defer"
+    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay)">
+    var FO = { movie:'swf/myMovie.swf', width:'300', height:'120', majorversion:'6', build:'40', setcontainercss:'true' };
+    UFO.create(FO, 'video');
+</script>
+</metal:javascript>
+
+<body>
+
+<div metal:fill-slot="main">
+    <h1 tal:content="context/Title">Video Title</h1>
+
+    <div metal:use-macro="context/document_byline/macros/byline">
+        Get the byline - contains details about author and modification date.
+    </div>
+
+    <p class="documentDescription"
+       tal:content="context/Description"
+       tal:condition="context/Description">
+        Video summary
+    </p>
+
+    <div id="video">
+        <p i18n:translate="content_requirements" class="portalWarningMessage" style="font-size: 100%;">
+            To view this content the following requirements must be fulfilled:
+        </p>
+        <ul>
+            <li i18n:translate="flash_required">
+                Adobe Flash Player version 9,0,28,0 or later must be installed;
+                <span i18n:name="download">
+                    <a href="http://www.adobe.com/go/getflash"
+                       i18n:translate="flash_download">download it now free</a>
+                </span>
+            </li>
+            <li i18n:translate="javascript_required">
+                Javascript 1.2 or later must be enabled
+            </li>
+        </ul>
+    </div>
+
+    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
+        Show related items if they exist
+    </div>
+    
+    <div class="visualClear" id="clear-space-after-relatedItems"></div>
+</div>
+
+</body>
+</html>

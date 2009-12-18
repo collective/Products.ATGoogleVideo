@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-06-11 20:30-0600\n"
+"Last-Translator: Héctor Velarde <hvelarde@jornada.com.mx>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ATGoogleVideo\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "Identificador del video"
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Identificador del video (docId)."
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr "Calidad"
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr "Determina la calidad de la reproducción; se recomienda el uso de 'best'."
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr "Inicio automático"
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr "Determina si el video iniciará de forma automática una vez cargada la página en el navegador."
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr "Imagen"
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr "Será utilizada para previsualización en la lista de videos; puede ser redimensionada."
+
+#. Default: "All videos&#x2026;"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr "Todos los videos&#x2026;"
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr "Ningún video publicado."
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr "Videos recientes"
+
+#. Default: "To view this content the following requirements must be fulfilled:"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "content_requirements"
+msgstr "Para ver este contenido se requiere lo siguiente:"
+
+#. Default: "download it now free"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_download"
+msgstr "descárguelo ahora"
+
+#. Default: "Adobe Flash Player version 9,0,28,0 or later must be installed; ${download}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_required"
+msgstr "Adobe Flash Player version 9,0,28,0 o posterior debe estar instalado; ${download}"
+
+#. Default: "Javascript 1.2 or later must be enabled"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "javascript_required"
+msgstr "Javascript 1.2 o posterior debe estar habilitado"
+

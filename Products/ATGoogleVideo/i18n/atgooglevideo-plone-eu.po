@@ -1,0 +1,28 @@
+# Érico Andrei <erico@simplesconsultoria.com.br>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2008-02-21 11:03+0100\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"Language-Team: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: eu\n"
+"Language-Name: Basque\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"X-Poedit-Language: Basque\n"
+
+#. Default: "Google Video"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "Google Video"
+msgstr "Google Video"
+
+#. Default: "An Archetypes based type to store Google Video and YouTube references."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "description_edit_google_video"
+msgstr "Google Video eta YouTubeko bideoetarako erreferentziak gordetzeko objektu mota."
+

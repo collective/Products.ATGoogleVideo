@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="atgooglevideo" version="20071213-01"
+               handler="Products.ATGoogleVideo.setuphandlers.setupATGoogleVideo"
+               title="ATGoogleVideo configuration">
+    <dependency step="properties" />
+    <dependency step="types" />
+    Set up ATGoogleVideo navigation properties
+  </import-step>
+</import-steps>

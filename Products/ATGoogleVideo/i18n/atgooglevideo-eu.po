@@ -1,0 +1,92 @@
+# Érico Andrei <erico@simplesconsultoria.com.br>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2008-02-21 11:01+0100\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"Language-Team: eu <eu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: eu\n"
+"Language-Name: Basque\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ATGoogleVideo\n"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "Bideoaren identifikadorea"
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Bideoaren identifikadorea (docId)"
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr "Kalitatea"
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr "Bideoa erakusterakoan erabiliko den kalitatea. \"best\" aukeratzea gomendatzen dizugu."
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr "Bakarrik martxan hasi?"
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr "Nabigatzailean agertzeaz bat martxan hasiko den bideoa ala ez."
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr "Irudia"
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr "Bideo guztien zerrendan erabiliko den irudia. Irudiaren tamaina egokitu egingo da."
+
+#. Default: "All videos&#x2026;"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr "Bideo guztiak&#x2026;"
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr "Ez dago bideorik."
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr "Azken bideoak"
+
+#. Default: "To view this content the following requirements must be fulfilled:"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "content_requirements"
+msgstr "Eduki hau ikusteko baldintza hauek bete behar dira:"
+
+#. Default: "download it now free"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_download"
+msgstr "lortu hemendik"
+
+#. Default: "Adobe Flash Player version 9,0,28,0 or later must be installed; ${download}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_required"
+msgstr "Adobe Flash Player 9,0,28,0 edo handiagoa behar duzu; ${download}"
+
+#. Default: "Javascript 1.2 or later must be enabled"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "javascript_required"
+msgstr "Javascript 1.2 edo handiagoa behar da"
+

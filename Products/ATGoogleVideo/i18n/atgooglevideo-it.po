@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-06-11 20:30-0600\n"
+"Last-Translator: Enzo Cesanelli <enzo@noiza.com>\n"
+"Language-Team: La Jornada\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ATGoogleVideo\n"
+"X-Is-Fallback-For: it-it it-hr it-sm it-si it-ch\n"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "Codice identificativo del video"
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Codice identificativo del video (docId)."
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr "Qualità"
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr "Seleziona la qualità di riproduzione; si raccomanda l'utilizzo dell'opzione 'best'."
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr "Autoriproduzione"
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr "Seleziona se il video deve essere subito riprodotto non appena caricato nel browser."
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr "Immagine"
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr "Sarà mostrata nella lista dei video. L'immagine sarà ridimensionata ad una dimensione adeguata."
+
+#. Default: "All videos&#x2026;"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr "Tutti i video&#x2026;"
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr "Nessun video ancora pubblicato."
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr "Video recenti"
+

@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-02-21 20:01-0600\n"
+"Last-Translator: G. Gozadinos <admin@qiweb.net>\n"
+"Language-Team: Qi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Code: el\n"
+"Language-Name: Ελληνικά\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: ATGoogleVideo\n"
+
+#. Default: "Google Video"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "Google Video"
+msgstr "Google Video"
+
+#. Default: "An Archetypes based type to store Google Video and YouTube references."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "description_edit_google_video"
+msgstr "Ένας τύπος video που αποθηκεύει αναφορές σε video Google και YouTube."

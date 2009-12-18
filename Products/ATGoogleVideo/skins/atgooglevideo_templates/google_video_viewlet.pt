@@ -1,0 +1,42 @@
+<script type="text/javascript" defer="defer"
+    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay)">
+    var FO = { movie:'swf/myMovie.swf', width:'300', height:'120', majorversion:'6', build:'40', setcontainercss:'true' };
+    UFO.create(FO, 'video');
+</script>
+
+<div class="viewlet googlevideo"
+     tal:define="request_url request/URL;
+                 global template_id python:request_url.split('/')[-1]">
+
+    <h2 class="viewlet title"
+        tal:content="here/Title">
+        Title
+    </h2>
+
+<tal:view condition="python:template_id != 'design_view'">
+    <div id="video">
+        <p i18n:translate="content_requirements" class="portalWarningMessage" style="font-size: 100%;">
+            To view this content the following requirements must be fulfilled:
+        </p>
+        <ul>
+            <li i18n:translate="flash_required">
+                Adobe Flash Player version 9,0,28,0 or later must be installed;
+                <span i18n:name="download">
+                    <a href="http://www.adobe.com/go/getflash"
+                       i18n:translate="flash_download">download it now free</a>
+                </span>
+            </li>
+            <li i18n:translate="javascript_required">
+                Javascript 1.2 or later must be enabled
+            </li>
+        </ul>
+    </div>
+</tal:view>
+
+<tal:design condition="python:template_id == 'design_view'">
+    <div style="background: #eee url('googlevideo.png') no-repeat center; border: 1px solid #999; height: 200px; width: 250px;">
+        &nbsp;
+    </div>
+</tal:design>
+
+</div>

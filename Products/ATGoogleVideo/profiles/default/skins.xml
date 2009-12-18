@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_skins" meta_type="Plone Skins Tool">
+  <object name="atgooglevideo_images" meta_type="Filesystem Directory View"
+          directory="ATGoogleVideo/skins/atgooglevideo_images" />
+  <object name="atgooglevideo_templates" meta_type="Filesystem Directory View"
+          directory="ATGoogleVideo/skins/atgooglevideo_templates" />
+  <skin-path name="Plone Default">
+    <layer name="atgooglevideo_images" insert-after="custom" />
+  </skin-path>
+  <skin-path name="Plone Default">
+    <layer name="atgooglevideo_templates" insert-after="custom" />
+  </skin-path>
+</object>

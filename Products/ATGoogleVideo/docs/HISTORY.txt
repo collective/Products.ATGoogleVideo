@@ -1,0 +1,74 @@
+Changelog for ATGoogleVideo
+
+    (name of developer listed in brackets)
+
+ATGoogleVideo 0.6 - Release candidate
+    - Code clean up
+    - Added default add content permission
+    - GS-based installation
+    - Plone 3.0 compatibility
+    - Test suite was enhanced to include interface tests
+      [hvelarde]
+    - Use zope3-style interfaces to mark ATGoogleVideo
+      [erral]
+    - Added Greek translation
+      [Yiorgis Gozadinos <ggozadinos@gmail.com>]
+    - Script rename to avoid conflicts with ATOdeoAudio
+      [dirceu]
+
+ATGoogleVideo 0.5 - Release Candidate
+    - Fixed ticket #369: AttributeError: kupu_library_tool
+    - Fixed ticket #387: Unauthorized: Do not have permissions to remove this object
+    - Fixed ticket #388: Internet Explorer can not open the Internet site... Operation Aborted
+    - Fixed some issues with auto start of videos
+    - Deprecated template googlevideo_folder_summary_view was removed
+    - Smart Folder for videos is no longer added at installation time
+    - Enhanced accessibility by using Unobtrusive Flash Objects
+      (http://www.bobbyvandersluis.com/ufo/)
+    - Test suite was enhanced to include uninstall tests
+    - Code clean up
+      [hvelarde]
+    - Added Italian translation
+      [Enzo Cesanelli <enzo@noiza.com>]
+
+ATGoogleVideo 0.4 - Release Candidate
+    - ATContentTypes is now the base of ATGoogleVideo
+    - Unused fields from ATGoogleVideo were removed from content definition
+    - Support for YouTube videos was implemented in page templates at view time using
+      heuristics
+    - Fixed ticket #354: Failure in test testPortalFactorySetup
+    - Google Video is integrated in Kupu as linkable
+    - Unit test was improved and is fully functional now
+    - Added Spanish translation
+    - LinguaPlone support was tested
+    - Use of googlevideo_folder_summary_view is deprecated in favor of
+      folder_summary_view
+      [hvelarde]
+    - Added POT files to allow i18n
+    - Added Brazilian Portuguese translation
+      [Érico Andrei <erico@simplesconsultoria.com.br>]
+
+ATGoogleVideo 0.3 - Beta
+    - Added image field to content type
+    - Fixed ticket #293: video is not renamed
+    - Fixed ticket #303: image associated with video is not shown
+    - Fixed ticket #304: properties tab is not shown in Google Video
+    - Fixed ticket #305: AttributeError: getImageCaption
+    - Fixed ticket #307: Description field is on properties form instead of edit form
+    - Added googlevideo_folder_summary_view as default view for Smart Folder
+    - portlet_recent_google_video is now portlet_recent_google_videos and
+      will be used only in googlevideo_view
+    - Added small unit test
+      [hvelarde]
+
+ATGoogleVideo 0.2 - Beta
+
+    - Videos are named with their title.
+    - Added Smart Folder to display all videos in site.
+    - Added portlet to display recently published videos.
+      [hvelarde]
+
+ATGoogleVideo 0.1 - Beta
+
+    - Initial product release.
+      [hvelarde]

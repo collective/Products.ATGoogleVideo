@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleVideo\n"
+"POT-Creation-Date: 2007-02-15 21:25+0000\n"
+"PO-Revision-Date: 2007-02-21 20:01-0600\n"
+"Last-Translator: G. Gozadinos <admin@qiweb.net>\n"
+"Language-Team: Qi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Code: el\n"
+"Language-Name: Ελληνικά\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: ATGoogleVideo\n"
+
+#. Default: "docId"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "docId"
+
+#. Default: "Video "docId" identifier."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Κωδικός του video"
+
+#. Default: "Quality"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_quality"
+msgstr "Ποιότητα"
+
+#. Default: "Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_quality"
+msgstr "Καθορίζει την ποιότητα του video. Προτείνεται η επιλογή 'best'. "
+
+#. Default: "autoPlay"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_autoPlay"
+msgstr "Αυτόματο παίξιμο"
+
+#. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_autoPlay"
+msgstr "Καθορίζει το αν το video θα αρχίσει με το φόρτωμα της σελίδας από τον browser."
+
+#. Default: "Image"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_image"
+msgstr "Εικόνα"
+
+#. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_image"
+msgstr "Θα φαίνεται στη λίστα video. Η εικόνα θα εμφανιστεί σε κλίμακα σε ένα λογικό μέγεθος."
+
+#. Default: "An Archetypes based type to store Google Video and YouTube references."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "description_edit_google_video"
+msgstr "Ένας τύπος video που αποθηκεύει αναφορές σε video Google και YouTube."
+
+#. Default: "All videos..."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_more_videos"
+msgstr "Όλα τα video..."
+
+#. Default: "No videos published yet."
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_no_videos"
+msgstr "Δεν έχουν δημοσιευτεί video."
+
+#. Default: "Recent videos"
+#: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
+msgid "box_recent_videos"
+msgstr "Τελευταία video"
+
+#. Default: "There are currently no items in this folder."
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_folder_summary_view.pt
+msgid "description_no_items_in_folder"
+msgstr "Δεν υπάρχουν αντικείμενα στο φάκελο."
+
+#. Default: "Up one level"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_folder_summary_view.pt
+msgid "go_to_parent_url"
+msgstr "Πάνω ένα επίπεδο"
+
+#. Default: "by ${author}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_folder_summary_view.pt
+msgid "label_by_author"
+msgstr "από ${author}"
+
+#. Default: "See video"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_folder_summary_view.pt
+msgid "see_more"
+msgstr "Δείτε το video"
+
+#. Default: "To view this content the following requirements must be fulfilled:"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "content_requirements"
+msgstr "Για να δείτε αυτό το βίντεο πρέπει:"
+
+#. Default: "Adobe Flash Player version 9,0,28,0 or later must be installed; ${download}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_required"
+msgstr "να έχετε εγκαταστήσει το πρόγραμμα Adobe Flash Player (έκδοση 9,0,28,0 και πάνω) ${download}"
+
+#. Default: "download it now free"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_download"
+msgstr "κατεβάστε το δωρεάν"
+
+#. Default: "Javascript 1.2 or later must be enabled"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "javascript_required"
+msgstr "να έχετε ενεργοποιημένο το Javascript (έκδοση 1.2 και πάνω)"
+
+
+
