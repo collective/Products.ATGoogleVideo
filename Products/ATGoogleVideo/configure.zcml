@@ -9,7 +9,7 @@
   <include package="Products.GenericSetup" file="meta.zcml"/>
   <genericsetup:registerProfile
         name="default"
-        title="ATGoogleVideo"
+        title="Google and You Tube video suport for Plone"
         directory="profiles/default"
         description="A content type to store Google Video and YouTube references"
         provides="Products.GenericSetup.interfaces.EXTENSION" />

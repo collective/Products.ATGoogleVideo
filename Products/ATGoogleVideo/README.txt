@@ -1,5 +1,8 @@
-﻿Description
+﻿Products.ATGoogleVideo
+======================
 
+Description
+-----------
     ATGoogleVideo is an Archetypes based product that adds a new content type
     to maintain references to videos stored in "Google Video":http://video.google.com/
     or "YouTube":http://www.youtube.com/ into a Plone site.
@@ -9,6 +12,7 @@
     requirements of La Jornada and on the "IPTC News Architecture":http://www.iptc.org/.
 
 Acknowlegements
+---------------
 
     This product could not be possible without the work of the following people:
 
@@ -21,22 +25,18 @@ Acknowlegements
     - David Convent for his "DIY Plone Style":http://plone.org/products/diyplonestyle product
 
 Installation
+------------
+    This product was tested on Plone 3.1.x
+   
+    If your using a buildout-based installation all you need to do is declare 
+    archetypes.languagebugfix in eggs and zcml sections for you instance.
+    
+Credits
+-------
+   
+   * Héctor Velarde <hvelarde@jornada.com.mx> (Original product)
+    
+   * `Simples Consultoria <http://www.simplesconsultoria.com.br/>`_ 
+     (egg version)
+    
 
-    This product was tested on Plone 2.5 and Plone 3.0.
-
-    Place ATGoogleVideo in the Products directory of your Zope instance
-    and restart the server. (Linux users should fix permissions of files and folders first.)
-
-    Go to the 'Site Setup' page in the Plone interface and click on the
-    'Add/Remove Products' link.
-
-    Choose ATGoogleVideo (check its checkbox) and click the 'Install' button.
-
-    You may have to empty your browser cache to see the effects of the
-    product installation/uninstallation.
-
-    Uninstall -- This can be done from the same management screen.
-
-Written by
-
-    Héctor Velarde <hvelarde@jornada.com.mx>
