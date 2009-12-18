@@ -1,0 +1,12 @@
+Changelog
+=========
+
+0.8 (2009-12-17)
+----------------
+    
+    * Explicitly set portal_type ATGoogleVideo class as archetype_tool still use
+      it... [erico_andrei]
+      
+    * Auto-play should not be required [erico_andrei]
+
+    * First egg release of Products.ATGoogleVideo [erico_andrei]
