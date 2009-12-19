@@ -108,7 +108,7 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
 
     security = ClassSecurityInfo()
     
-    product_type = 'Google Video'
+    portal_type = 'Google Video'
     
     schema = ATGoogleVideoSchema
     _at_rename_after_creation = True
