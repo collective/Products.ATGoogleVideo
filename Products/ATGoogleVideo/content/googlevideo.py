@@ -134,7 +134,15 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
             if image is not None and not isinstance(image, basestring):
                 # image might be None or '' for empty images
                 return image
-
+        
         return ATCTContent.__bobo_traverse__(self, REQUEST, name)
+    
+    def getRemoteUrl(self):
+        '''Returns docId from this object
+           This way we don't need to add a new metadata to
+           the catalog
+        '''
+        return self.getDocId()
+        
 
 registerType(ATGoogleVideo, PROJECTNAME)

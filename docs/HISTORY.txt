@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.8.2 (2010-03-12)
+------------------
+
+    * Added method getRemoteUrl (Thanks to everton137) [erico_andrei]
+
 0.8.1 (2009-12-19)
 ------------------
     
