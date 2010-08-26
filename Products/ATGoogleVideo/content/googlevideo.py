@@ -98,6 +98,21 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             ),
         ),
 
+    TextField('transcription',
+        languageIndependent=True,
+        storage=AnnotationStorage(),
+        required=False,
+        searchable=True,
+        default_output_type = 'text/x-html-safe',
+        widget=RichWidget(
+            label="Transcription",
+            label_msgid="label_transcription",
+            description="Video's audio transcripted.",
+            description_msgid="help_transcription",
+            i18n_domain="ATGoogleVideo",
+        ),
+    ),
+
     ),)
 finalizeATCTSchema(ATGoogleVideoSchema)
 
