@@ -1,4 +1,4 @@
-﻿Products.ATGoogleVideo
+Products.ATGoogleVideo
 ======================
 
 Description
