@@ -29,6 +29,8 @@ class TestGetLatestVideo(ATGoogleVideoTestCase):
         self.video1.setDocId('7111080333836653411')
         self.video1.setQuality('best')
         self.video1.setAutoPlay(False)
+        self.video1.setTranscription('<p>video\'s transcription</p>')
+        self.video1.setDimensions('300:150')
 
     def testIfVideoUnpublishedResultIsEmpty(self):
         self.failUnless(self.folder.getLatestGoogleVideo() is None)
@@ -48,18 +50,21 @@ class TestGetLatestVideo(ATGoogleVideoTestCase):
         self.assertEqual(latest_video.docId, '7111080333836653411')
         self.assertEqual(latest_video.quality, 'best')
         self.assertEqual(latest_video.autoPlay, False)
+        self.assertEqual(latest_video.getTranscription(), '<p>video\'s transcription</p>')
+        self.assertEqual(latest_video.getWidth(), '300')
+        self.assertEqual(latest_video.getHeight(), '150')
 
 
 GOOGLE_VIDEO_BASE_CODE = """
     /* <![CDATA[ */
-    var FO = { movie:'http://video.google.com/googleplayer.swf?docId=%s', width:'400', height:'326', majorversion:'9', build:'28', flashvars:'%s', quality:'%s', wmode:'transparent', setcontainercss:'true' };
+    var FO = { movie:'http://video.google.com/googleplayer.swf?docId=%s', width:'%s', height:'%s', majorversion:'9', build:'28', flashvars:'%s', quality:'%s', wmode:'transparent', setcontainercss:'true' };
     UFO.create(FO, 'video');
     /* ]]> */
 """
 
 YOUTUBE_BASE_CODE = """
     /* <![CDATA[ */
-    var FO = { movie:'http://www.youtube.com/v/%s%s', width:'425', height:'350', majorversion:'9', build:'28', flashvars:'', quality:'%s', wmode:'transparent', setcontainercss:'true' };
+    var FO = { movie:'http://www.youtube.com/v/%s%s', width:'%s', height:'%s', majorversion:'9', build:'28', flashvars:'', quality:'%s', wmode:'transparent', setcontainercss:'true' };
     UFO.create(FO, 'video');
     /* ]]> */
 """
@@ -74,29 +79,31 @@ class TestUFOJSCode(ATGoogleVideoTestCase):
         self.video1.setDescription('A description')
         self.video1.setQuality('best')
         self.video1.setAutoPlay(False)
+        self.video1.setTranscription('<p>video\'s transcription</p>')
+        self.video1.setDimensions('300:150')
 
     def testUFOForGoogleVideo(self):
         self.video1.setDocId('7111080333836653411')
-        code = GOOGLE_VIDEO_BASE_CODE % ('7111080333836653411', '', 'best')
-        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay())
+        code = GOOGLE_VIDEO_BASE_CODE % ('7111080333836653411', '300', '150', '', 'best')
+        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
         self.video1.setQuality('low')
         self.video1.setAutoPlay(True)
-        code = GOOGLE_VIDEO_BASE_CODE % ('7111080333836653411', 'autoplay=true', 'low')
-        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay())
+        code = GOOGLE_VIDEO_BASE_CODE % ('7111080333836653411', '300', '150', 'autoplay=true', 'low')
+        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
     def testUFOForYouTube(self):
         self.video1.setDocId('nojWJ6-XmeQ')
-        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '', 'best')
-        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay())
+        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '', '300', '150', 'best')
+        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
         self.video1.setQuality('low')
         self.video1.setAutoPlay(True)
-        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '&amp;autoplay=1', 'low')
-        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay())
+        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '&amp;autoplay=1', '300', '150', 'low')
+        ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
 def test_suite():

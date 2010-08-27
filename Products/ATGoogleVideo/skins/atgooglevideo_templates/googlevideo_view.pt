@@ -8,7 +8,7 @@
 
 <metal:javascript fill-slot="javascript_head_slot">
 <script type="text/javascript" defer="defer"
-    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay)">
+    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay, width=context.getWidth(), height=context.getHeight())">
     var FO = { movie:'swf/myMovie.swf', width:'300', height:'120', majorversion:'6', build:'40', setcontainercss:'true' };
     UFO.create(FO, 'video');
 </script>

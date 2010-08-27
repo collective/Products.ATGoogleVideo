@@ -98,9 +98,23 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             ),
         ),
 
+    StringField('dimensions',
+        default='425:350',
+        required=True,
+        validators=('isValidDimensions'),
+        widget=StringWidget(
+            label='Dimensions',
+            label_msgid='label_dimensions',
+            description='Video\'s dimensions according to format "width:height".',
+            description_msgid='help_dimensions',
+            i18n_domain='ATGoogleVideo',
+            size=20,
+            ),
+        ),
+
     TextField('transcription',
         languageIndependent=False,
-        storage=AnnotationStorage(),
+        storage=AnnotationStorage(migrate=True),
         required=False,
         searchable=True,
         default_output_type = 'text/x-html-safe',
@@ -152,12 +166,28 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
         
         return ATCTContent.__bobo_traverse__(self, REQUEST, name)
     
+    security.declarePublic('View')
     def getRemoteUrl(self):
         '''Returns docId from this object
            This way we don't need to add a new metadata to
            the catalog
         '''
         return self.getDocId()
+
+    security.declarePublic('View')
+    def getWidth(self):
+        '''Extracts width from field 'dimensions'
+        '''
+        return self.getDimensions().split(':')[0]
+
+    security.declarePublic('View')
+    def getHeight(self):
+        '''Extracts height from field 'dimensions'
+        '''
+        # Retrocompatibility
+        dim = self.getDimensions().split(':')
+        height = len(dim) > 1 and dim[1] or dim[0]
+        return height
         
 
 registerType(ATGoogleVideo, PROJECTNAME)

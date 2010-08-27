@@ -82,12 +82,15 @@ class TestContentCreation(ATGoogleVideoTestCase):
         self.video1.setDocId('7111080333836653411')
         self.video1.setAutoPlay(True)
         self.video1.setTranscription('<p><b>Simon says:</b> get up, get down</p>')
+        self.video1.setDimensions('600:400')
         
         self.assertEqual(self.video1.Title(), 'A title')
         self.assertEqual(self.video1.Description(), 'A description')
         self.assertEqual(self.video1.getDocId(), '7111080333836653411')
         self.assertEqual(self.video1.getAutoPlay(), True)
-        self.assertEqual(self.video1.getTranscription(), '<p><b>Simon says:</b> get up, get down</p>')
+        self.assertTrue(self.video1.getTranscription().startswith('<p>&lt;p&gt;&lt;b&gt;'), 'Checking if it is escaping HTML tags')
+        self.assertEqual(self.video1.getWidth(), '600')
+        self.assertEqual(self.video1.getHeight(), '400')
 
     def testGoogleVideoValidation(self):
         """ this will be used when validation is implemented """
