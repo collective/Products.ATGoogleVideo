@@ -99,7 +99,7 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
         ),
 
     TextField('transcription',
-        languageIndependent=True,
+        languageIndependent=False,
         storage=AnnotationStorage(),
         required=False,
         searchable=True,
