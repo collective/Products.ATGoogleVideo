@@ -47,7 +47,7 @@
         </ul>
     </div>
 
-    <div id="video_transcription">
+    <div id="video_transcription" tal:condition="context/getTranscription">
         <dl class="collapsible inline collapsedOnLoad">
             <dt class="collapsibleHeader" i18n:translate="video_transcription">Video transcription</dt>
             <dd class="collapsibleContent" tal:content="structure context/getTranscription">transcription</dd>
