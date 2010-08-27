@@ -15,16 +15,6 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ATGoogleVideo\n"
 
-#. Default: "Video identifier"
-#: ATGoogleVideo/content/googlevideo.py
-msgid "label_docId"
-msgstr "Identificador do vídeo"
-
-#. Default: "Video identifier (docId)."
-#: ATGoogleVideo/content/googlevideo.py
-msgid "help_docId"
-msgstr "Identificador do vídeo (docId)."
-
 #. Default: "All videos&#x2026;"
 #: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
 msgid "box_more_videos"
@@ -40,10 +30,30 @@ msgstr "Nenhum vídeo disponível."
 msgid "box_recent_videos"
 msgstr "Vídeos recentes"
 
+#. Default: "To view this content the following requirements must be fulfilled:"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "content_requirements"
+msgstr "Para visualizar esse conteúdo os seguintes requisitos devem ser preenchidos:"
+
+#. Default: "download it now free"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_download"
+msgstr "baixe de graça"
+
+#. Default: "Adobe Flash Player version 9,0,28,0 or later must be installed; ${download}"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "flash_required"
+msgstr "O Adobe Flash Player da versão 9,0,28,0 ou mais recente deve ser instalado; ${download}"
+
 #. Default: "Specifies whether the movie begins playing immediately on loading in the browser."
 #: ATGoogleVideo/content/googlevideo.py
 msgid "help_autoPlay"
 msgstr "Determina se vídeo deve ser iniciado automaticamente no carregamento da página."
+
+#. Default: "Video identifier (docId)."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_docId"
+msgstr "Identificador do vídeo (docId)."
 
 #. Default: "Will be shown in the video listing. Image will be scaled to a sensible size."
 #: ATGoogleVideo/content/googlevideo.py
@@ -55,10 +65,25 @@ msgstr "Imagem para ser exibida na listagem dos vídeos. Ela será redimencionad
 msgid "help_quality"
 msgstr "Define a qualidade de exibição. A utilização de 'best' é recomendada"
 
+#. Default: "Video's audio transcripted."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_transcription"
+msgstr "Transcrição do áudio do vídeo"
+
+#. Default: "Javascript 1.2 or later must be enabled"
+#: ATGoogleVideo/skins/atgooglevideo_templates/googlevideo_view.pt
+msgid "javascript_required"
+msgstr "Você precisa ter habilitado o Javascript 1.2 ou mais recente"
+
 #. Default: "autoPlay"
 #: ATGoogleVideo/content/googlevideo.py
 msgid "label_autoPlay"
 msgstr "Início automático"
+
+#. Default: "Video identifier"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_docId"
+msgstr "Identificador do vídeo"
 
 #. Default: "Image"
 #: ATGoogleVideo/content/googlevideo.py
@@ -69,4 +94,9 @@ msgstr "Imagem"
 #: ATGoogleVideo/content/googlevideo.py
 msgid "label_quality"
 msgstr "Qualidade"
+
+#. Default: "Transcription"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_transcription"
+msgstr "Transcrição"
 

@@ -55,6 +55,16 @@ msgstr ""
 msgid "help_image"
 msgstr ""
 
+#. Default: "Transcription"
+#: ATGoogleVideo/content/googlevideo.py
+msgid "label_transcription"
+msgstr ""
+
+#. Default: "Video's audio transcripted."
+#: ATGoogleVideo/content/googlevideo.py
+msgid "help_transcription"
+msgstr ""
+
 #. Default: "All videos&#x2026;"
 #: ATGoogleVideo/skins/atgooglevideo_templates/portlet_recent_google_videos.pt
 msgid "box_more_videos"
