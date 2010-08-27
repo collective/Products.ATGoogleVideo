@@ -47,6 +47,13 @@
         </ul>
     </div>
 
+    <div id="video_transcription">
+        <dl class="collapsible inline collapsedOnLoad">
+            <dt class="collapsibleHeader" i18n:translate="video_transcription">Video transcription</dt>
+            <dd class="collapsibleContent" tal:content="structure context/getTranscription">transcription</dd>
+        </dl>
+    </div>
+
     <div metal:use-macro="context/document_relateditems/macros/relatedItems">
         Show related items if they exist
     </div>
