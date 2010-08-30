@@ -1,6 +1,11 @@
 Changelog
 =========
 
+branch video-transcription (2010-08-27)
+---------------------------------------
+    * Added field dimensions [thiromi]
+    * Added field video transcription [thiromi]
+
 trunk (2010-03-14)
 ------------------
 

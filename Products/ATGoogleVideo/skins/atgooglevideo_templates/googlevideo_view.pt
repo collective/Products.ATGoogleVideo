@@ -8,7 +8,7 @@
 
 <metal:javascript fill-slot="javascript_head_slot">
 <script type="text/javascript" defer="defer"
-    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay)">
+    tal:content="structure python:context.getUFOJSCodeFromVideo(context.docId, context.quality, context.autoPlay, width=context.getWidth(), height=context.getHeight())">
     var FO = { movie:'swf/myMovie.swf', width:'300', height:'120', majorversion:'6', build:'40', setcontainercss:'true' };
     UFO.create(FO, 'video');
 </script>
@@ -45,6 +45,13 @@
                 Javascript 1.2 or later must be enabled
             </li>
         </ul>
+    </div>
+
+    <div id="video_transcription" tal:condition="context/getTranscription">
+        <dl class="collapsible inline collapsedOnLoad">
+            <dt class="collapsibleHeader" i18n:translate="video_transcription">Video transcription</dt>
+            <dd class="collapsibleContent" tal:content="structure context/getTranscription">transcription</dd>
+        </dl>
     </div>
 
     <div metal:use-macro="context/document_relateditems/macros/relatedItems">
