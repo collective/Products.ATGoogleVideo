@@ -4,6 +4,12 @@ Changelog
 trunk (2010-08-30)
 ------------------
 
+* xxx [Simples Consultoria]
+
+
+0.8.3 (2010-08-30)
+------------------
+
     * Added field dimensions [thiromi]
     * Added field video transcription [thiromi]
     * Filled some blank msgids at brazilian portuguese [thiromi]
