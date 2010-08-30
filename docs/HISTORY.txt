@@ -1,8 +1,9 @@
 Changelog
 =========
 
-branch video-transcription (2010-08-27)
----------------------------------------
+trunk (2010-08-30)
+------------------
+
     * Added field dimensions [thiromi]
     * Added field video transcription [thiromi]
     * Filled some blank msgids at brazilian portuguese [thiromi]
@@ -11,7 +12,7 @@ branch video-transcription (2010-08-27)
 trunk (2010-03-14)
 ------------------
 
-* xxx [Simples Consultoria]
+    * xxx [Simples Consultoria]
 
 
 0.8.2 (2010-03-12)
