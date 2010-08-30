@@ -92,6 +92,10 @@ class TestContentCreation(ATGoogleVideoTestCase):
         self.assertEqual(self.video1.getWidth(), '600')
         self.assertEqual(self.video1.getHeight(), '400')
 
+        self.video1.setDimensions('350')
+        self.assertEqual(self.video1.getWidth(), '350')
+        self.assertEqual(self.video1.getHeight(), '350')
+
     def testGoogleVideoValidation(self):
         """ this will be used when validation is implemented """
         validGoogleVideo = (

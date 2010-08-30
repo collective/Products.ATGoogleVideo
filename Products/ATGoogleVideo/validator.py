@@ -13,6 +13,6 @@ class WidthHeightValidator:
         instance    = kwargs.get('instance', None)
         splited = value.split(':')
         # just the format 999+:999+
-        if re.compile('([0-9]+):([0-9]+)').match(value) is None:
+        if re.compile('([0-9]+)(:[0-9]+)?').match(value) is None:
             return u'Follow this format, please: "width:height"'
         return True
