@@ -9,12 +9,6 @@ trunk (2010-08-30)
     * Filled some blank msgids at brazilian portuguese [thiromi]
     * Removed BOM from README.txt that was causing formatting errors [thiromi]
 
-trunk (2010-03-14)
-------------------
-
-    * xxx [Simples Consultoria]
-
-
 0.8.2 (2010-03-12)
 ------------------
 
