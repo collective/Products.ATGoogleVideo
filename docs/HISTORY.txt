@@ -5,6 +5,8 @@ branch video-transcription (2010-08-27)
 ---------------------------------------
     * Added field dimensions [thiromi]
     * Added field video transcription [thiromi]
+    * Filled some blank msgids at brazilian portuguese [thiromi]
+    * Removed BOM from README.txt that was causing formatting errors [thiromi]
 
 trunk (2010-03-14)
 ------------------
