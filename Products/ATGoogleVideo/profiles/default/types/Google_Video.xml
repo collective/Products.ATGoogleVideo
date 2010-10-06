@@ -21,7 +21,6 @@
   
   <alias from="(Default)" to="(dynamic view)"/>
   <alias from="edit" to="atct_edit"/>
-  <alias from="properties" to="base_metadata"/>
   <alias from="sharing" to="@@sharing"/>
   <alias from="view" to="(selected layout)"/>
 
@@ -32,12 +31,6 @@
 
   <action title="Edit" action_id="edit" category="object" condition_expr=""
           url_expr="string:${object_url}/edit" visible="True">
-    <permission value="Modify portal content"/>
-  </action>
-
-  <action title="Properties" action_id="metadata" category="object"
-          condition_expr="" url_expr="string:${object_url}/properties"
-          visible="True">
     <permission value="Modify portal content"/>
   </action>
 
@@ -60,16 +53,4 @@
     <permission value="Modify portal content"/>
   </action>
   
-  <action title="Sharing" action_id="local_roles" category="object"
-          condition_expr="" url_expr="string:${object_url}/sharing" visible="True">
-    <permission value="Manage properties"/>
-  </action>
-
-  <action title="State" action_id="content_status_history"
-          category="object_tabs"
-          condition_expr="python:object and portal.portal_workflow.getTransitionsFor(object, object.getParentNode())"
-          url_expr="string:$object_url/content_status_history" visible="False">
-    <permission value="View"/>
-  </action>
-
 </object>
