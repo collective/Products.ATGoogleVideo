@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
+from zope.interface import implements
 from Products.validation.interfaces.IValidator import IValidator
 import re
 
+from Products.ATGoogleVideo.config import PLONE_VERSION
+
 class WidthHeightValidator:
-    __implements__ = (IValidator,)
+    
+    if PLONE_VERSION == 4:    
+        implements(IValidator)
+    else:
+        __implements__ = (IValidator,)
 
     def __init__(self, name, title=u'width:height validation'):
         self.name = name

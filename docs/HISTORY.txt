@@ -1,10 +1,10 @@
 Changelog
 =========
 
-trunk (2010-08-30)
+0.8.4 (2010-10-06)
 ------------------
 
-* xxx [Simples Consultoria]
+    * Updated to run in Plone 4 [lepri]
 
 
 0.8.3 (2010-08-30)
