@@ -1,6 +1,6 @@
 Changelog for ATGoogleVideo
 
-    (name of developer listed in brackets)
+0.8.4 (2010-10-13)
 
 ATGoogleVideo 0.6 - Release candidate
     - Code clean up
