@@ -1,14 +1,16 @@
 Changelog
-=========
+-----------
 
 0.8.4 (2010-10-06)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Updated to run in Plone 4 [lepri]
+    
+    * Adding zcml autoinclude [erico_andrei]
 
 
 0.8.3 (2010-08-30)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Added field dimensions [thiromi]
     * Added field video transcription [thiromi]
@@ -16,17 +18,17 @@ Changelog
     * Removed BOM from README.txt that was causing formatting errors [thiromi]
 
 0.8.2 (2010-03-12)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Added method getRemoteUrl (Thanks to everton137) [erico_andrei]
 
 0.8.1 (2009-12-19)
-------------------
+^^^^^^^^^^^^^^^^^^^^
     
     * Instead of using product_type (typo?), use portal_type [erico_andrei]
 
 0.8 (2009-12-17)
-----------------
+^^^^^^^^^^^^^^^^^^^^
     
     * Explicitly set portal_type ATGoogleVideo class as archetype_tool still use
       it... [erico_andrei]

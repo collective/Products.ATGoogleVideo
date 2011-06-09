@@ -1,7 +1,7 @@
 Changelog for ATGoogleVideo
 
-0.8.4a2 (unreleased)
---------------------
+0.9 (2011-06-09)
+----------------
 
 - Nothing changed yet.
 
