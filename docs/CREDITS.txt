@@ -5,8 +5,17 @@ Contributors
 
 * Érico Andrei (erico@simplesconsultoria.com.br)
 
-* Gustavo Lepri (lepri@simplesconsultoria.com.br)
+* Enzo Cesanelli (enzo@noiza.com)
+
+* Dirceu Pereira Tiegs
+
+* Yiorgis Gozadinos (ggozadinos@gmail.com)
+
+* Mikel Larreategi (mlarreategi@codesyntax.com)
 
 * Thiago Hiromi
 
-Development sponsored by La Jornada and Simples Consultoria.
+* Gustavo Lepri (lepri@simplesconsultoria.com.br)
+
+Development sponsored in part by Demos, Desarrollo de Medios and Simples
+Consultoria.
