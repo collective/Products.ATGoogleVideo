@@ -1,38 +1,120 @@
 Changelog
------------
+---------
 
 0.8.4 (2010-10-06)
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
-    * Updated to run in Plone 4 [lepri]
-    
-    * Adding zcml autoinclude [erico_andrei]
+* Updated to run in Plone 4 [lepri]
+* Adding zcml autoinclude [erico_andrei]
 
 
 0.8.3 (2010-08-30)
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
-    * Added field dimensions [thiromi]
-    * Added field video transcription [thiromi]
-    * Filled some blank msgids at brazilian portuguese [thiromi]
-    * Removed BOM from README.txt that was causing formatting errors [thiromi]
+* Added field dimensions [thiromi]
+* Added field video transcription [thiromi]
+* Filled some blank msgids at brazilian portuguese [thiromi]
+* Removed BOM from README.txt that was causing formatting errors [thiromi]
+
 
 0.8.2 (2010-03-12)
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
-    * Added method getRemoteUrl (Thanks to everton137) [erico_andrei]
+* Added method getRemoteUrl (Thanks to everton137) [erico_andrei]
+
 
 0.8.1 (2009-12-19)
-^^^^^^^^^^^^^^^^^^^^
-    
-    * Instead of using product_type (typo?), use portal_type [erico_andrei]
+^^^^^^^^^^^^^^^^^^
+
+* Instead of using product_type (typo?), use portal_type [erico_andrei]
+
 
 0.8 (2009-12-17)
-^^^^^^^^^^^^^^^^^^^^
-    
-    * Explicitly set portal_type ATGoogleVideo class as archetype_tool still use
-      it... [erico_andrei]
-      
-    * Auto-play should not be required [erico_andrei]
+^^^^^^^^^^^^^^^^
 
-    * First egg release of Products.ATGoogleVideo [erico_andrei]
+* Explicitly set portal_type ATGoogleVideo class as archetype_tool still use
+  it... [erico_andrei]
+* Auto-play should not be required [erico_andrei]
+* First egg release of Products.ATGoogleVideo [erico_andrei]
+
+
+0.6 (2008-01-14)
+^^^^^^^^^^^^^^^^
+
+* Code clean up [hvelarde]
+* Added default add content permission [hvelarde]
+* GenericSetup-based installation [hvelarde]
+* Plone 3.0 compatibility [hvelarde]
+* Test suite was enhanced to include interface tests [hvelarde]
+* Use zope3-style interfaces to mark ATGoogleVideo [erral]
+* Added Greek translation [ggozad]
+* Script rename to avoid conflicts with ATOdeoAudio [dirceu]
+
+
+0.5 (2007-06-08)
+^^^^^^^^^^^^^^^^
+
+* Fixed ticket #369: AttributeError: kupu_library_tool [hvelarde]
+* Fixed ticket #387: Unauthorized: Do not have permissions to remove this
+  object [hvelarde]
+* Fixed ticket #388: Internet Explorer can not open the Internet site...
+  Operation Aborted [hvelarde]
+* Fixed some issues with auto start of videos [hvelarde]
+* Deprecated template googlevideo_folder_summary_view was removed [hvelarde]
+* Smart Folder for videos is no longer added at installation time [hvelarde]
+* Enhanced accessibility by using `Unobtrusive Flash Objects
+  <http://www.bobbyvandersluis.com/ufo/>`_ [hvelarde]
+* Test suite was enhanced to include uninstall tests [hvelarde]
+* Code clean up [hvelarde]
+* Added Italian translation [noiza]
+
+
+0.4 (2007-02-23)
+^^^^^^^^^^^^^^^^
+
+* ATContentTypes is now the base of ATGoogleVideo [hvelarde]
+* Unused fields from ATGoogleVideo were removed from content definition
+  [hvelarde]
+* Support for YouTube videos was implemented in page templates at view time
+  using heuristics [hvelarde]
+* Fixed ticket #354: Failure in test testPortalFactorySetup [hvelarde]
+* Google Video is integrated in Kupu as linkable [hvelarde]
+* Unit test was improved and is fully functional now [hvelarde]
+* Added Spanish translation [hvelarde]
+* LinguaPlone support was tested [hvelarde]
+* Use of googlevideo_folder_summary_view is deprecated in favor of
+  folder_summary_view [hvelarde]
+* Added POT files to allow i18n [hvelarde]
+* Added Brazilian Portuguese translation [erico_andrei]
+
+
+0.3 (2007-01-03)
+^^^^^^^^^^^^^^^^
+
+* Added image field to content type [hvelarde]
+* Fixed ticket #293: video is not renamed [hvelarde]
+* Fixed ticket #303: image associated with video is not shown [hvelarde]
+* Fixed ticket #304: properties tab is not shown in Google Video [hvelarde]
+* Fixed ticket #305: AttributeError: getImageCaption [hvelarde]
+* Fixed ticket #307: Description field is on properties form instead of edit
+  form [hvelarde]
+* Added googlevideo_folder_summary_view as default view for Smart Folder
+  [hvelarde]
+* portlet_recent_google_video is now portlet_recent_google_videos and will be
+  used only in googlevideo_view [hvelarde]
+* Added small unit test [hvelarde]
+
+
+0.2 (2006-09-12)
+^^^^^^^^^^^^^^^^
+
+* Videos are named with their title [hvelarde]
+* Added Smart Folder to display all videos in site [hvelarde]
+* Added portlet to display recently published videos [hvelarde]
+
+
+0.1 (2006-08-31)
+^^^^^^^^^^^^^^^^
+
+* Initial release.
+
