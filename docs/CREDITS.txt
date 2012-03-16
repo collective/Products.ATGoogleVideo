@@ -1,0 +1,12 @@
+Contributors
+------------
+
+* Héctor Velarde (hector.velarde@gmail.com)
+
+* Érico Andrei (erico@simplesconsultoria.com.br)
+
+* Gustavo Lepri (lepri@simplesconsultoria.com.br)
+
+* Thiago Hiromi
+
+Development sponsored by La Jornada and Simples Consultoria.
