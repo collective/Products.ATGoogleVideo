@@ -1,6 +1,22 @@
 Changelog
 ---------
 
+0.9.1dev
+^^^^^^^^^^^^^^^^^^
+
+* autoPlay must be off by default (issue #4241) [hvelarde]
+* Tests were refactored to use plone.app.testing [hvelarde]
+* Added development buildout [hvelarde]
+* Fixed documentation and package history [hvelarde]
+* Fixed package declaration and distribution information [hvelarde]
+
+
+0.9.0 (2011-06-09)
+^^^^^^^^^^^^^^^^^^
+
+* Remove unused sc-releaser.cfg file [erico_andrei]
+
+
 0.8.4 (2010-10-06)
 ^^^^^^^^^^^^^^^^^^
 
