@@ -1,27 +1,30 @@
-# This Python file uses the following encoding: utf-8
-
-"""
-$Id$
-"""
+# -*- coding: utf-8 -*-
 
 __author__ = 'Héctor Velarde <hvelarde@jornada.com.mx>'
 __docformat__ = 'restructuredtext'
 __copyright__ = 'Copyright (C) 2007  DEMOS, Desarrollo de Medios, S.A. de C.V.'
-__license__  = 'The GNU General Public License version 2 or later'
+__license__ = 'The GNU General Public License version 2 or later'
 
-import os, sys
-if __name__ == '__main__':
-    execfile(os.path.join(sys.path[0], 'framework.py'))
+import unittest2 as unittest
 
-# Import the base test case classes
-from base import ATGoogleVideoTestCase
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 
-from Products.ATGoogleVideo.config import *
+from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
 
-class TestGetLatestVideo(ATGoogleVideoTestCase):
+
+class TestGetLatestVideo(unittest.TestCase):
     """Ensure latest video is obtained"""
 
-    def afterSetUp(self):
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('Folder', 'test-folder')
+        setRoles(self.portal, TEST_USER_ID, ['Member'])
+        self.folder = self.portal['test-folder']
+
         self.folder.invokeFactory('Google Video', 'video1')
         self.video1 = getattr(self.folder, 'video1')
         self.video1.setTitle('A title')
@@ -33,16 +36,18 @@ class TestGetLatestVideo(ATGoogleVideoTestCase):
         self.video1.setDimensions('300:150')
 
     def testIfVideoUnpublishedResultIsEmpty(self):
-        self.failUnless(self.folder.getLatestGoogleVideo() is None)
+        self.assertTrue(self.folder.getLatestGoogleVideo() is None)
 
     def testIfVideoPublishedResultIsNotEmpty(self):
-        self.setRoles(['Manager', 'Member'])
-        self.video1.content_status_modify(workflow_action='publish')
-        self.failUnless(self.folder.getLatestGoogleVideo() is not None)
+        wf = self.portal['portal_workflow']
+        types = ('Google Video', )
+        wf.setChainForPortalTypes(types, 'simple_publication_workflow')
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        wf.doActionFor(self.video1, 'publish')
+        self.assertTrue(self.folder.getLatestGoogleVideo() is not None)
 
     def _testLatestVideoBrain(self):
         """this is not working because attributes are not indexed correctly"""
-        self.setRoles(['Manager', 'Member'])
         self.video1.content_status_modify(workflow_action='publish')
         latest_video = self.folder.getLatestGoogleVideo()
         self.assertEqual(latest_video.Title, 'A title')
@@ -69,10 +74,19 @@ YOUTUBE_BASE_CODE = """
     /* ]]> */
 """
 
-class TestUFOJSCode(ATGoogleVideoTestCase):
+
+class TestUFOJSCode(unittest.TestCase):
     """Ensure Javascript code for UFO is generated"""
 
-    def afterSetUp(self):
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('Folder', 'test-folder')
+        setRoles(self.portal, TEST_USER_ID, ['Member'])
+        self.folder = self.portal['test-folder']
+
         self.folder.invokeFactory('Google Video', 'video1')
         self.video1 = getattr(self.folder, 'video1')
         self.video1.setTitle('A title')
@@ -106,12 +120,6 @@ class TestUFOJSCode(ATGoogleVideoTestCase):
         ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
-def test_suite():
-    from unittest import TestSuite, makeSuite
-    suite = TestSuite()
-    suite.addTest(makeSuite(TestGetLatestVideo))
-    suite.addTest(makeSuite(TestUFOJSCode))
-    return suite
 
-if __name__ == '__main__':
-    framework()
+def test_suite():
+    return unittest.defaultTestLoader.loadTestsFromName(__name__)
