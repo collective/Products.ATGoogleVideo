@@ -94,6 +94,9 @@ class TestContentCreation(unittest.TestCase):
     def testCreateGoogleVideo(self):
         self.assertTrue('video1' in self.folder.objectIds())
 
+    def test_autoPlay_default_value(self):
+        self.assertFalse(self.video1.getAutoPlay())
+
     def testEditGoogleVideo(self):
         self.video1.setTitle('A title')
         self.video1.setDescription('A description')

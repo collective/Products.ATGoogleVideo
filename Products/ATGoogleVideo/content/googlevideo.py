@@ -1,13 +1,9 @@
-# This Python file uses the following encoding: utf-8
-
-"""
-$Id$
-"""
+# -*- coding: utf-8 -*-
 
 __author__ = 'Héctor Velarde <hvelarde@jornada.com.mx>'
 __docformat__ = 'restructuredtext'
 __copyright__ = 'Copyright (C) 2005-2007  DEMOS, Desarrollo de Medios, S.A. de C.V.'
-__license__  = 'The GNU General Public License version 2 or later'
+__license__ = 'The GNU General Public License version 2 or later'
 
 try:
     from Products.LinguaPlone.public import *
@@ -27,7 +23,7 @@ from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
 from Products.CMFCore.permissions import View
 from Products.validation import V_REQUIRED
 
-from Products.ATGoogleVideo.config import *
+from Products.ATGoogleVideo.config import PROJECTNAME, QUALITY
 from Products.ATGoogleVideo.interfaces import IATGoogleVideo
 
 ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
@@ -62,9 +58,9 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
         ),
 
     BooleanField('autoPlay',
-        default=1,
+        default=False,
         languageIndependent=True,
-        required=0,
+        required=False,
         widget=BooleanWidget(
             label='autoPlay',
             label_msgid='label_autoPlay',
@@ -79,13 +75,13 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
         #max_size=zconf.ATGoogleVideo.max_image_dimension,
         storage=AnnotationStorage(migrate=True),
         sizes={
-            'large'   : (768, 768),
-            'preview' : (400, 400),
-            'mini'    : (200, 200),
-            'thumb'   : (128, 128),
-            'tile'    :  (64, 64),
-            'icon'    :  (32, 32),
-            'listing' :  (16, 16),
+            'large': (768, 768),
+            'preview': (400, 400),
+            'mini': (200, 200),
+            'thumb': (128, 128),
+            'tile':  (64, 64),
+            'icon':  (32, 32),
+            'listing':  (16, 16),
             },
         validators=(('isNonEmptyFile', V_REQUIRED),),
         widget=ImageWidget(
@@ -117,7 +113,7 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
         storage=AnnotationStorage(migrate=True),
         required=False,
         searchable=True,
-        default_output_type = 'text/x-html-safe',
+        default_output_type='text/x-html-safe',
         widget=RichWidget(
             label="Transcription",
             label_msgid="label_transcription",
@@ -128,17 +124,16 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
     ),
 
     ),)
+
 finalizeATCTSchema(ATGoogleVideoSchema)
 
+
 class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
-    """An Archetypes based type to store Google Video and YouTube references."""
-
+    """ An Archetypes based type to store Google Video and YouTube references.
+    """
     implements(IATGoogleVideo)
-
     security = ClassSecurityInfo()
-    
     portal_type = 'Google Video'
-    
     schema = ATGoogleVideoSchema
     _at_rename_after_creation = True
 
@@ -163,9 +158,9 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
             if image is not None and not isinstance(image, basestring):
                 # image might be None or '' for empty images
                 return image
-        
+
         return ATCTContent.__bobo_traverse__(self, REQUEST, name)
-    
+
     security.declarePublic('View')
     def getRemoteUrl(self):
         '''Returns docId from this object
@@ -188,6 +183,5 @@ class ATGoogleVideo(ATCTContent, HistoryAwareMixin, ATCTImageTransform):
         dim = self.getDimensions().split(':')
         height = len(dim) > 1 and dim[1] or dim[0]
         return height
-        
 
 registerType(ATGoogleVideo, PROJECTNAME)
