@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+0.9.2 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+* Changing the embed video for iframe for youtube videos [lepri]
+
 0.9.1dev
 ^^^^^^^^^^^^^^^^^^
 
@@ -10,11 +15,6 @@ Changelog
 * Fixed documentation and package history [hvelarde]
 * Fixed package declaration and distribution information [hvelarde]
 
-
-0.9.2 (unreleased)
-^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
 
 
 0.9.1 (2012-04-05)
