@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Héctor Velarde <hvelarde@jornada.com.mx>'
-__docformat__ = 'restructuredtext'
-__copyright__ = 'Copyright (C) 2005-2007  DEMOS, Desarrollo de Medios, S.A. de C.V.'
-__license__ = 'The GNU General Public License version 2 or later'
-
 try:
     from Products.LinguaPlone.public import *
 except ImportError:
@@ -39,8 +34,8 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             description_msgid='help_docId',
             i18n_domain='ATGoogleVideo',
             size=20,
-            ),
         ),
+    ),
 
     StringField('quality',
         default='best',
@@ -54,8 +49,8 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             description='Specifies rendering quality, how graphics are anti-aliased and how bitmaps are smoothed. Use of "best" is recommended.',
             description_msgid='help_quality',
             i18n_domain='ATGoogleVideo',
-            ),
         ),
+    ),
 
     BooleanField('autoPlay',
         default=False,
@@ -67,8 +62,8 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             description='Specifies whether the movie begins playing immediately on loading in the browser.',
             description_msgid='help_autoPlay',
             i18n_domain='ATGoogleVideo',
-            ),
         ),
+    ),
 
     ImageField('image',
         languageIndependent=True,
@@ -79,10 +74,10 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             'preview': (400, 400),
             'mini': (200, 200),
             'thumb': (128, 128),
-            'tile':  (64, 64),
-            'icon':  (32, 32),
-            'listing':  (16, 16),
-            },
+            'tile': (64, 64),
+            'icon': (32, 32),
+            'listing': (16, 16),
+        },
         validators=(('isNonEmptyFile', V_REQUIRED),),
         widget=ImageWidget(
             label='Image',
@@ -91,8 +86,8 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             description_msgid='help_image',
             i18n_domain='ATGoogleVideo',
             show_content_type=False,
-            ),
         ),
+    ),
 
     StringField('dimensions',
         default='425:350',
@@ -105,8 +100,8 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
             description_msgid='help_dimensions',
             i18n_domain='ATGoogleVideo',
             size=20,
-            ),
         ),
+    ),
 
     TextField('transcription',
         languageIndependent=False,
@@ -123,7 +118,7 @@ ATGoogleVideoSchema = ATContentTypeSchema.copy() + Schema((
         ),
     ),
 
-    ),)
+))
 
 finalizeATCTSchema(ATGoogleVideoSchema)
 

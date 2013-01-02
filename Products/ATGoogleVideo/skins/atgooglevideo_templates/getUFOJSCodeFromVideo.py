@@ -45,7 +45,7 @@ if video_id[1:].isdigit():
     movie = 'http://video.google.com/googleplayer.swf?docId=%s' % video_id
     width_swf = width or 400
     height_swf = height or 326
-    flashvars = test(auto_play,'autoplay=true','')
+    flashvars = test(auto_play, 'autoplay=true', '')
     params = params % (movie, width_swf, height_swf, majorversion, build, flashvars, quality)
     return code % (params, div_id)
 
@@ -53,5 +53,5 @@ else:
     # is YouTube
     width_swf = width or 425
     height_swf = height or 350
-    auto = test(auto_play, 1,0)
+    auto = test(auto_play, 1, 0)
     return code_iframe % (div_id, height_swf, width_swf, video_id, auto)

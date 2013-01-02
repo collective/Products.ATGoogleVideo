@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
+
+import re
+
 from zope.interface import implements
 from Products.validation.interfaces.IValidator import IValidator
-import re
 
 from Products.ATGoogleVideo.config import PLONE_VERSION
 
+
 class WidthHeightValidator:
-    
-    if PLONE_VERSION == 4:    
+
+    if PLONE_VERSION == 4:
         implements(IValidator)
     else:
         __implements__ = (IValidator,)
@@ -17,7 +20,7 @@ class WidthHeightValidator:
         self.title = title
 
     def __call__(self, value, *args, **kwargs):
-        instance    = kwargs.get('instance', None)
+        instance = kwargs.get('instance', None)
         splited = value.split(':')
         # just the format 999+:999+
         if re.compile('([0-9]+)(:[0-9]+)?').match(value) is None:

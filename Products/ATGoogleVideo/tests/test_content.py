@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Héctor Velarde <hvelarde@jornada.com.mx>'
-__docformat__ = 'restructuredtext'
-__copyright__ = 'Copyright (C) 2007  DEMOS, Desarrollo de Medios, S.A. de C.V.'
-__license__ = 'The GNU General Public License version 2 or later'
-
 import unittest2 as unittest
 
 from plone.app.testing import TEST_USER_ID
@@ -64,7 +59,7 @@ def isValidGoogleVideoId(id):
     """
     import re
     p = re.compile('^-?\d{18,19}$')
-    return p.match(id) != None
+    return p.match(id) is not None
 
 
 def isValidYouTubeId(id):
@@ -73,7 +68,7 @@ def isValidYouTubeId(id):
     """
     import re
     p = re.compile('^[\w-]{11}$')
-    return p.match(id) != None
+    return p.match(id) is not None
 
 
 class TestContentCreation(unittest.TestCase):
