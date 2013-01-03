@@ -62,13 +62,31 @@ GOOGLE_VIDEO_BASE_CODE = """
     /* ]]> */
 """
 
-YOUTUBE_BASE_CODE = """
-    /* <![CDATA[ */
-    var FO = { movie:'http://www.youtube.com/v/%s%s', width:'%s', height:'%s', majorversion:'9', build:'28', flashvars:'', quality:'%s', wmode:'transparent', setcontainercss:'true' };
-    UFO.create(FO, 'video');
-    /* ]]> */
-"""
+#YOUTUBE_BASE_CODE = """
+#    /* <![CDATA[ */
+#    var FO = { movie:'http://www.youtube.com/v/%s%s', width:'%s', height:'%s', majorversion:'9', build:'28', flashvars:'', quality:'%s', wmode:'transparent', setcontainercss:'true' };
+#    UFO.create(FO, 'video');
+#    /* ]]> */
+#"""
 
+YOUTUBE_BASE_CODE = """
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('%s', {
+            height: '%s',
+            width: '%s',
+            videoId: '%s',
+            playerVars : {
+                'autoplay': %s,
+            },
+        });
+    }
+"""
 
 class TestUFOJSCode(unittest.TestCase):
     """Ensure Javascript code for UFO is generated"""
@@ -105,13 +123,13 @@ class TestUFOJSCode(unittest.TestCase):
 
     def testUFOForYouTube(self):
         self.video1.setDocId('nojWJ6-XmeQ')
-        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '', '300', '150', 'best')
+        code = YOUTUBE_BASE_CODE % ('video', '150', '300', 'nojWJ6-XmeQ', 0)
         ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
         self.video1.setQuality('low')
         self.video1.setAutoPlay(True)
-        code = YOUTUBE_BASE_CODE % ('nojWJ6-XmeQ', '&amp;autoplay=1', '300', '150', 'low')
+        code = YOUTUBE_BASE_CODE % ('video', '150', '300', 'nojWJ6-XmeQ', 1)
         ufo_code = self.folder.getUFOJSCodeFromVideo(self.video1.getDocId(), self.video1.getQuality(), self.video1.getAutoPlay(), width=self.video1.getWidth(), height=self.video1.getHeight())
         self.assertEqual(code, ufo_code)
 
