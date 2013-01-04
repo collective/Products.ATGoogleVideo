@@ -93,6 +93,7 @@ class TestContentCreation(unittest.TestCase):
         self.assertFalse(self.video1.getAutoPlay())
 
     def testEditGoogleVideo(self):
+        import pdb;pdb.set_trace()
         self.video1.setTitle('A title')
         self.video1.setDescription('A description')
         self.video1.setDocId('7111080333836653411')
@@ -114,6 +115,16 @@ class TestContentCreation(unittest.TestCase):
         self.video1.setDimensions('350')
         self.assertEqual(self.video1.getWidth(), '350')
         self.assertEqual(self.video1.getHeight(), '350')
+
+    def testHeight(self):
+        self.video1.setDimensions('350')
+        height = self.video1.getHeight()
+        self.assertEqual(height, '350')
+
+    def testWidth(self):
+        self.video1.setDimensions('350')
+        width = self.video1.getWidth()
+        self.assertEqual(width, '350')
 
     def testGoogleVideoValidation(self):
         """ this will be used when validation is implemented """

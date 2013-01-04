@@ -62,13 +62,6 @@ GOOGLE_VIDEO_BASE_CODE = """
     /* ]]> */
 """
 
-#YOUTUBE_BASE_CODE = """
-#    /* <![CDATA[ */
-#    var FO = { movie:'http://www.youtube.com/v/%s%s', width:'%s', height:'%s', majorversion:'9', build:'28', flashvars:'', quality:'%s', wmode:'transparent', setcontainercss:'true' };
-#    UFO.create(FO, 'video');
-#    /* ]]> */
-#"""
-
 YOUTUBE_BASE_CODE = """
     var tag = document.createElement('script');
     tag.src = "//www.youtube.com/iframe_api";
@@ -87,6 +80,7 @@ YOUTUBE_BASE_CODE = """
         });
     }
 """
+
 
 class TestUFOJSCode(unittest.TestCase):
     """Ensure Javascript code for UFO is generated"""
