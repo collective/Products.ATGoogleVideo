@@ -8,6 +8,8 @@ from plone.app.testing import setRoles
 from Products.ATGoogleVideo.config import PROJECTNAME
 from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
 
+from Products.CMFCore.utils import getToolByName
+
 
 class TestInstallation(unittest.TestCase):
     """Ensure product is properly installed"""
@@ -40,6 +42,14 @@ class TestInstallation(unittest.TestCase):
         site_properties = self.properties.site_properties
         self.assertTrue('Google Video' in site_properties.getProperty('default_page_types'))
 
+    def testKupuLinkable(self):
+        """ test if Google Video is linkable in kupu
+        """
+        kupuTool = getToolByName(self.portal, 'kupu_library_tool', None)
+        if kupuTool is not None:
+            linkable = list(kupuTool.getPortalTypesForResourceType('linkable'))
+            self.asserTrue('Google Video' in linkable)
+        
 
 class TestUninstall(unittest.TestCase):
     """ensure product is properly uninstalled"""

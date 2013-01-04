@@ -12,14 +12,18 @@ from Products.ATContentTypes.interface import IImageContent
 from Products.ATContentTypes.lib.historyaware import HistoryAwareMixin
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
 
+from Products.Archetypes.interfaces.layer import ILayerContainer
+from Products.Archetypes import atapi
+
 from Products.ATGoogleVideo.interfaces import IATGoogleVideo
-from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
+from Products.ATGoogleVideo.content.googlevideo import ATGoogleVideoSchema
+from Products.ATGoogleVideo.testing import INTEGRATION_TESTING, FUNCTIONAL_TESTING
 
 
 class TestContentType(unittest.TestCase):
     """ ensure content type implementation """
 
-    layer = INTEGRATION_TESTING
+    layer = FUNCTIONAL_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
@@ -93,7 +97,6 @@ class TestContentCreation(unittest.TestCase):
         self.assertFalse(self.video1.getAutoPlay())
 
     def testEditGoogleVideo(self):
-        import pdb;pdb.set_trace()
         self.video1.setTitle('A title')
         self.video1.setDescription('A description')
         self.video1.setDocId('7111080333836653411')
@@ -194,6 +197,44 @@ class TestContentCreation(unittest.TestCase):
         for id in knownWrong:
             self.assertTrue(not isValidYouTubeId(id))
 
+
+class TestGoogleVideoFields(unittest.TestCase):
+    """
+    """
+    
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('Folder', 'test-folder')
+        setRoles(self.portal, TEST_USER_ID, ['Member'])
+        self.folder = self.portal['test-folder']
+
+        self.folder.invokeFactory('Google Video', 'video1')
+        self.video1 = getattr(self.folder, 'video1')
+    
+    def test_docId_field(self):
+        field = ATGoogleVideoSchema.get('docId')
+ 
+        self.assertTrue(ILayerContainer.providedBy(field))
+        self.assertTrue(field.required == 1, 'Value is %s' % field.required)
+        self.assertTrue(field.enforceVocabulary == 0,
+                          'Value is %s' % field.enforceVocabulary)
+        self.assertEqual(field.type, 'string')
+        self.assertTrue(isinstance(field.widget, atapi.StringWidget))
+        
+    def test_quality_field(self):
+        field = ATGoogleVideoSchema.get('quality')
+ 
+        self.assertTrue(ILayerContainer.providedBy(field))
+        self.assertTrue(field.required == 1, 'Value is %s' % field.required)
+        self.assertTrue(field.languageIndependent, True)
+        self.assertEqual(field.type, 'string')
+        self.assertTrue(isinstance(field.widget, atapi.SelectionWidget))
+        self.assertTrue(field.default == 'best', 'Value is %s' % str(field.default))
+        self.assertTrue(field.vocabulary == ('low', 'high', 'autolow', 'autohigh', 'best'),
+                          'Value is %s' % str(field.vocabulary))
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
