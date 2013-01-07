@@ -5,7 +5,6 @@ import unittest2 as unittest
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 
-#from Interface.Verify import verifyObject
 from zope.schema import getValidationErrors
 from Products.ATContentTypes.interface import IATContentType
 from Products.ATContentTypes.interface import IImageContent
@@ -17,13 +16,15 @@ from Products.Archetypes import atapi
 
 from Products.ATGoogleVideo.interfaces import IATGoogleVideo
 from Products.ATGoogleVideo.content.googlevideo import ATGoogleVideoSchema
-from Products.ATGoogleVideo.testing import INTEGRATION_TESTING, FUNCTIONAL_TESTING
+from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
+
+from Products.validation import validation
 
 
 class TestContentType(unittest.TestCase):
     """ ensure content type implementation """
 
-    layer = FUNCTIONAL_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
@@ -197,44 +198,12 @@ class TestContentCreation(unittest.TestCase):
         for id in knownWrong:
             self.assertTrue(not isValidYouTubeId(id))
 
+    def testWidthHeightValidator(self):
+        """ will test the validator for dimension """
+        v = validation.validatorFor('isValidDimensions')
+        self.assertTrue(v('150:150'))
+        self.assertEqual(v('a150:150'), u'Follow this format, please: "width:height"')
 
-class TestGoogleVideoFields(unittest.TestCase):
-    """
-    """
-    
-    layer = INTEGRATION_TESTING
-
-    def setUp(self):
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
-        setRoles(self.portal, TEST_USER_ID, ['Member'])
-        self.folder = self.portal['test-folder']
-
-        self.folder.invokeFactory('Google Video', 'video1')
-        self.video1 = getattr(self.folder, 'video1')
-    
-    def test_docId_field(self):
-        field = ATGoogleVideoSchema.get('docId')
- 
-        self.assertTrue(ILayerContainer.providedBy(field))
-        self.assertTrue(field.required == 1, 'Value is %s' % field.required)
-        self.assertTrue(field.enforceVocabulary == 0,
-                          'Value is %s' % field.enforceVocabulary)
-        self.assertEqual(field.type, 'string')
-        self.assertTrue(isinstance(field.widget, atapi.StringWidget))
-        
-    def test_quality_field(self):
-        field = ATGoogleVideoSchema.get('quality')
- 
-        self.assertTrue(ILayerContainer.providedBy(field))
-        self.assertTrue(field.required == 1, 'Value is %s' % field.required)
-        self.assertTrue(field.languageIndependent, True)
-        self.assertEqual(field.type, 'string')
-        self.assertTrue(isinstance(field.widget, atapi.SelectionWidget))
-        self.assertTrue(field.default == 'best', 'Value is %s' % str(field.default))
-        self.assertTrue(field.vocabulary == ('low', 'high', 'autolow', 'autohigh', 'best'),
-                          'Value is %s' % str(field.vocabulary))
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
