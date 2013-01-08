@@ -4,9 +4,8 @@
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            i18n_domain="ATGoogleVideo">
 
+  <five:registerPackage package="." initialize=".initialize"/>
 
-  <include package="Products.GenericSetup" />
-  <include package="Products.GenericSetup" file="meta.zcml"/>
   <genericsetup:registerProfile
         name="default"
         title="Google and You Tube video suport for Plone"

@@ -9,8 +9,6 @@ from zope.i18nmessageid import MessageFactory as BaseMessageFactory
 from Products.validation import validation
 from validator import WidthHeightValidator
 
-from Products.ATGoogleVideo import content
-
 validation.register(WidthHeightValidator('isValidDimensions'))
 
 # Get configuration data, permissions
