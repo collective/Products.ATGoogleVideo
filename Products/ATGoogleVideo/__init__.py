@@ -13,9 +13,6 @@ from Products.ATGoogleVideo import content
 
 validation.register(WidthHeightValidator('isValidDimensions'))
 
-# Module aliases
-sys.modules['Products.ATGoogleVideo.ATGoogleVideo'] = content.googlevideo
-
 # Get configuration data, permissions
 from config import PROJECTNAME, DEFAULT_ADD_CONTENT_PERMISSION
 

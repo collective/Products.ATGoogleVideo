@@ -4,6 +4,8 @@ Changelog
 0.9.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Remove needless module alias. No instances were ever created with that class
+  name [hvelarde]
 * Test compatibility with Plone 4.2 and 4.3. [hvelarde]
 * Fix package license as GPLv2. [hvelarde]
 * Changing the embed video for iframe for youtube videos [lepri]
