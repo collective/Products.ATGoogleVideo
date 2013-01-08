@@ -11,7 +11,7 @@ SHELL = /bin/sh
 
 options = -N -q -t 3
 src = Products/ATGoogleVideo/
-minimum_coverage = 80
+minimum_coverage = 78
 pep8_ignores = E128,E501
 max_complexity = 12
 css_ignores = ! -name jquery\*
