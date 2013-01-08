@@ -5,15 +5,20 @@ import unittest2 as unittest
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 
-#from Interface.Verify import verifyObject
 from zope.schema import getValidationErrors
 from Products.ATContentTypes.interface import IATContentType
 from Products.ATContentTypes.interface import IImageContent
 from Products.ATContentTypes.lib.historyaware import HistoryAwareMixin
 from Products.ATContentTypes.lib.imagetransform import ATCTImageTransform
 
+from Products.Archetypes.interfaces.layer import ILayerContainer
+from Products.Archetypes import atapi
+
 from Products.ATGoogleVideo.interfaces import IATGoogleVideo
+from Products.ATGoogleVideo.content.googlevideo import ATGoogleVideoSchema
 from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
+
+from Products.validation import validation
 
 
 class TestContentType(unittest.TestCase):
@@ -115,6 +120,16 @@ class TestContentCreation(unittest.TestCase):
         self.assertEqual(self.video1.getWidth(), '350')
         self.assertEqual(self.video1.getHeight(), '350')
 
+    def testHeight(self):
+        self.video1.setDimensions('350')
+        height = self.video1.getHeight()
+        self.assertEqual(height, '350')
+
+    def testWidth(self):
+        self.video1.setDimensions('350')
+        width = self.video1.getWidth()
+        self.assertEqual(width, '350')
+
     def testGoogleVideoValidation(self):
         """ this will be used when validation is implemented """
         validGoogleVideo = (
@@ -182,6 +197,12 @@ class TestContentCreation(unittest.TestCase):
         )
         for id in knownWrong:
             self.assertTrue(not isValidYouTubeId(id))
+
+    def testWidthHeightValidator(self):
+        """ will test the validator for dimension """
+        v = validation.validatorFor('isValidDimensions')
+        self.assertTrue(v('150:150'))
+        self.assertEqual(v('a150:150'), u'Follow this format, please: "width:height"')
 
 
 def test_suite():
