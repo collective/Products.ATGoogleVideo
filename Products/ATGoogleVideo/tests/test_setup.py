@@ -5,6 +5,7 @@ import unittest2 as unittest
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 
+from Products.ATGoogleVideo.config import PLONE_VERSION
 from Products.ATGoogleVideo.config import PROJECTNAME
 from Products.ATGoogleVideo.testing import INTEGRATION_TESTING
 
@@ -42,6 +43,7 @@ class TestInstallation(unittest.TestCase):
         site_properties = self.properties.site_properties
         self.assertTrue('Google Video' in site_properties.getProperty('default_page_types'))
 
+    @unittest.skipIf(PLONE_VERSION > 3, "skipping test for Kupu editor")
     def testKupuLinkable(self):
         """ test if Google Video is linkable in kupu
         """
@@ -49,7 +51,7 @@ class TestInstallation(unittest.TestCase):
         if kupuTool is not None:
             linkable = list(kupuTool.getPortalTypesForResourceType('linkable'))
             self.asserTrue('Google Video' in linkable)
-        
+
 
 class TestUninstall(unittest.TestCase):
     """ensure product is properly uninstalled"""
