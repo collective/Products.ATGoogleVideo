@@ -24,6 +24,10 @@ class Fixture(PloneSandboxLayer):
         # Install into Plone site using portal_setup
         self.applyProfile(portal, 'Products.ATGoogleVideo:default')
 
+    def tearDownZope(self, app):
+        # Uninstall product
+        z2.uninstallProduct(app, 'Products.ATGoogleVideo')
+
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
