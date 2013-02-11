@@ -14,16 +14,7 @@
 
 <body>
 
-<div metal:fill-slot="main">
-    <h1 tal:content="context/Title">Video Title</h1>
-
-    <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-    <p class="documentDescription"
-       tal:content="context/Description"
-       tal:condition="context/Description">
-        Video summary
-    </p>
+<div metal:fill-slot="content-core">
 
     <div id="video">
         <p i18n:translate="content_requirements" class="portalWarningMessage" style="font-size: 100%;">
@@ -49,12 +40,6 @@
             <dd class="collapsibleContent" tal:content="structure context/getTranscription">transcription</dd>
         </dl>
     </div>
-
-    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
-        Show related items if they exist
-    </div>
-    
-    <div class="visualClear" id="clear-space-after-relatedItems"></div>
 </div>
 
 </body>
